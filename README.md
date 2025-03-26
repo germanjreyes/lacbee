@@ -55,8 +55,6 @@ To deploy the website:
 
 ## Contact Information
 
-For questions or updates to this website, contact:
-
 For questions about the LACBEE 2025 conference:
 - Julia Berazneva (jberazneva@middlebury.edu)
 - Tanya Byker (tbyker@middlebury.edu)
