@@ -42,7 +42,7 @@ The website is a single-page HTML/CSS site with the following sections:
 To deploy the website:
 
 1. Upload the `index.html` file to your web hosting service
-2. If you're using Google Sites as mentioned in the email thread, you can:
+2. If you're using Google Sites
    - Create a new Google Site
    - Use the "Embed code" element to add this HTML content
    - Or recreate the structure using Google Sites' built-in tools
@@ -60,9 +60,9 @@ For questions about the LACBEE 2025 conference:
 - Tanya Byker (tbyker@middlebury.edu)
 - Jeffrey Carpenter (jcarpent@middlebury.edu)
 - Peter Matthews (pmatthew@middlebury.edu)
+- David Munro (dmunro@middlebury.edu)
 - Germán Reyes (greyes@middlebury.edu)
 - Andrea Robbett (arobbett@middlebury.edu)
-- David Munro (dmunro@middlebury.edu)
 
 ## Wish list
 
