@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LACBEE 2025 - Liberal Arts College Behavioral and Experimental Economics</title>
+    <style>
+        :root {
+            --primary-color: #1d3557;
+            --secondary-color: #457b9d;
+            --accent-color: #a8dadc;
+            --light-color: #f1faee;
+            --dark-color: #1d3557;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(29, 53, 87, 0.7), rgba(29, 53, 87, 0.7)), url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-color);
+        }
+        
+        section {
+            padding: 50px 0;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .card p, .card ul {
+            margin-bottom: 15px;
+        }
+        
+        .card ul {
+            padding-left: 20px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .contact {
+            margin-top: 20px;
+        }
+        
+        .contact p {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>LACBEE</h1>
+                <p>Liberal Arts College Behavioral and Experimental Economics</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#details">2025 Details</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#travel">Travel & Accommodation</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <div class="container">
+            <h2>LACBEE 2025</h2>
+            <p>The 5th Annual Liberal Arts College Behavioral and Experimental Economics Workshop</p>
+            <p>Middlebury College • June 23-24, 2025</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNus9Pr9jBN03pB0EUvRSifLFry2i0IrFqqpYnl0iNUgPsRA/viewform" class="cta-button" target="_blank">Submit Your Research</a>
+        </div>
+    </div>
+    
+    <main class="container">
+        <section id="about">
+            <h2>About LACBEE</h2>
+            <div class="card">
+                <p>This annual conference brings together faculty working in Behavioral and Experimental Economics at Liberal Arts Colleges. Inspired by the successful LACDEV and Liberal Arts Macro conferences, this gathering serves to establish research and mentoring networks, as well as provide opportunities to discuss the teaching of experimental and behavioral topics.</p>
+                <p>The fifth "in-person" Liberal Arts College Behavioral and Experimental Economics (LACBEE) workshop will be hosted by Middlebury College on June 23-24, 2025. Previous iterations of the workshop were hosted by Colorado College in 2019 and 2024, Carleton College in 2022, and Haverford and Swarthmore Colleges in 2023.</p>
+                <p>The workshop will include both research presentations and mentoring discussions. We especially encourage participants to bring their early-to-mid-stage work that would most benefit from input. For example, it may be a great idea to get focused feedback on an experimental design <em>before</em> you start running sessions.</p>
+            </div>
+        </section>
+        
+        <section id="details">
+            <h2>2025 Workshop Details</h2>
+            <div class="card">
+                <h3>Key Information</h3>
+                <ul>
+                    <li><strong>Dates:</strong> Monday June 23 - Tuesday June 24, 2025</li>
+                    <li><strong>Location:</strong> Middlebury College, Middlebury, Vermont</li>
+                    <li><strong>Submission Deadline:</strong> April 4, 2025</li>
+                    <li><strong>Registration:</strong> Link coming soon</li>
+                </ul>
+                
+                <h3 style="margin-top: 30px;">Submission</h3>
+                <p>Please use <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNus9Pr9jBN03pB0EUvRSifLFry2i0IrFqqpYnl0iNUgPsRA/viewform" target="_blank">this submission form</a> to sign up to present your research by April 4, 2025.</p>
+                
+                <h3 style="margin-top: 30px;">Registration</h3>
+                <p>All participants should register by June 9, 2025 (link coming soon).</p>
+                
+                <h3 style="margin-top: 30px;">Fees</h3>
+                <p>There will be no registration fee for the workshop. Light breakfasts, coffee, and lunches will be provided. Participants should expect to pay for their own lodging, transportation, and dinners.</p>
+            </div>
+        </section>
+        
+        <section id="schedule">
+            <h2>Schedule</h2>
+            <div class="card">
+                <p>The exact schedule will depend on the number of attendees, but the schedule will look something like:</p>
+                
+                <h3>Sunday, June 22</h3>
+                <ul>
+                    <li>Arrival and check-in (Most participants should plan to arrive Sunday night)</li>
+                </ul>
+                
+                <h3>Monday, June 23</h3>
+                <ul>
+                    <li>12:00 - 1:00 PM: Lunch</li>
+                    <li>1:00 - 2:30 PM: Lectures</li>
+                    <li>2:30 - 3:00 PM: Coffee break</li>
+                    <li>3:00 - 5:30 PM: Lectures</li>
+                    <li>5:30/6:00 PM: Dinner and social time</li>
+                </ul>
+                
+                <h3>Tuesday, June 24</h3>
+                <ul>
+                    <li>8:00 - 9:00 AM: Breakfast</li>
+                    <li>9:00 - 10:30 AM: Lectures</li>
+                    <li>10:30 - 11:00 AM: Coffee break</li>
+                    <li>11:00 AM - 12:00 PM: Lectures</li>
+                    <li>12:00 - 1:00 PM: Lunch</li>
+                    <li>1:00 - 2:00/3:00 PM: Additional sessions (if needed)</li>
+                    <li>Conference adjourns</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="travel">
+            <h2>Travel & Accommodation</h2>
+            <div class="two-column">
+                <div class="card">
+                    <h3>Getting to Middlebury</h3>
+                    <p>Participants can fly into Burlington International Airport (BTV) which is about 45 minutes from Middlebury. Other options include Albany International Airport (ALB, about 2 hours away) or flying into Boston Logan (BOS) or New York airports and taking Amtrak to Middlebury.</p>
+                    <p>More detailed transportation information will be provided closer to the conference date.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Accommodation</h3>
+                    <p>We have reserved room blocks at two locations:</p>
+                    <ul>
+                        <li><strong>Middlebury Inn:</strong> 10 rooms reserved</li>
+                        <li><strong>Courtyard Marriott:</strong> 10 rooms reserved</li>
+                    </ul>
+                    <p>Both blocks will be held until May 22, 2025. Booking information will be provided soon.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact">
+                <p>For questions or suggestions, please contact:</p>
+                <p>Andrea Robbett (arobbett@middlebury.edu)</p>
+                <p>David Munro (dmunro@middlebury.edu)</p>
+                <p>or any of the Middlebury Economics Department organizers</p>
+            </div>
+            <p style="margin-top: 30px;">We hope to see you in June 2025!</p>
+        </div>
+    </footer>
+</body>
+</html>
