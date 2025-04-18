@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LACBEE 2025 - Liberal Arts Colleges Behavioral and Experimental Economics</title>
-    <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -84,7 +83,7 @@
         }
         
         .hero {
-            background-image: linear-gradient(rgba(29, 53, 87, 0.7), rgba(29, 53, 87, 0.7)), url('https://www.middlebury.edu/college/sites/default/files/2019-08/admissions-home.jpg?fv=seCBEfVz');
+            background-image: linear-gradient(rgba(29, 53, 87, 0.7), rgba(29, 53, 87, 0.7)), url('/api/placeholder/1200/500');
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -310,22 +309,56 @@
             color: var(--accent-color);
         }
         
-        .organizers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        .important-date {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .organizers-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 25px 0;
+            width: 100%;
+        }
+        
+        .organizers-row {
+            display: flex;
+            justify-content: center;
             gap: 15px;
+        }
+        
+        .organizers-row:first-child {
+            justify-content: space-between;
+        }
+        
+        .organizers-row:last-child {
+            justify-content: space-evenly;
         }
         
         .organizer-card {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 8px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background-color 0.3s;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            flex: 0 0 22%;
         }
         
         .organizer-card:hover {
             transform: translateY(-3px);
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.2);
         }
         
         .organizer-card strong {
@@ -339,10 +372,14 @@
             font-size: 0.9rem;
         }
         
-        .copyright {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .contact-intro {
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        .closing-message {
+            font-size: 1.3rem;
+            margin-top: 40px;
         }
         
         .back-to-top {
@@ -360,11 +397,6 @@
             text-decoration: none;
             box-shadow: var(--shadow);
             transition: all 0.3s;
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
@@ -374,92 +406,17 @@
             transform: translateY(-3px);
         }
         
-        .important-date {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .organizers-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 25px 0;
-    width: 100%;
-}
-
-.organizers-row {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.organizers-row:first-child {
-    justify-content: space-between;
-}
-
-.organizers-row:last-child {
-    justify-content: space-evenly;
-}
-
-.organizer-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 8px;
-    transition: transform 0.3s, background-color 0.3s;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    flex: 0 0 22%;
-}
-
-.organizer-card:hover {
-    transform: translateY(-3px);
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.organizer-card strong {
-    display: block;
-    margin-bottom: 5px;
-    color: white;
-}
-
-.organizer-card span {
-    color: var(--accent-color);
-    font-size: 0.9rem;
-}
-
-.contact-intro {
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-
-.closing-message {
-    font-size: 1.3rem;
-    margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-    .organizers-row {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    
-    .organizer-card {
-        flex: 0 0 45%;
-        margin-bottom: 10px;
-    }
-}
-
         @media (max-width: 768px) {
+            .organizers-row {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .organizer-card {
+                flex: 0 0 45%;
+                margin-bottom: 10px;
+            }
+            
             .header-content {
                 flex-direction: column;
                 text-align: center;
@@ -508,10 +465,6 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
-            .organizers-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
         }
     </style>
 </head>
@@ -543,9 +496,7 @@
             <p>The 5th Annual Liberal Arts Colleges</p>
             <p>Behavioral and Experimental Economics Workshop</p>
             <p class="hero-date">Middlebury College • June 23-24, 2025</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNus9Pr9jBN03pB0EUvRSifLFry2i0IrFqqpYnl0iNUgPsRA/viewform" class="cta-button" target="_blank">
-                <i class="fas fa-user-plus"></i> Register Now
-            </a>
+
         </div>
     </div>
     
@@ -558,7 +509,7 @@
                 <p>The workshop will include both research presentations and mentoring discussions. We especially encourage participants to bring their early-to-mid-stage work that would most benefit from input. For example, it may be a great idea to get focused feedback on an experimental design <em>before</em> you start running sessions.</p>
                 <div class="important-notice">
                     <p>There is <strong>no registration fee</strong> for the workshop. Light breakfasts, coffee, lunches, and dinners will be provided. Participants should expect to pay for their own lodging and transportation.</p>
-                    <p>If you would like to register to attend (as a presenter or attendee), please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNus9Pr9jBN03pB0EUvRSifLFry2i0IrFqqpYnl0iNUgPsRA/viewform" target="_blank">this form</a> by <span class="important-date">Wednesday, April 2nd</span>. If you would like to present a paper, please indicate that on the form and you will be prompted to submit the paper title and abstract at the same time. We expect to be able to distribute a tentative schedule about a week later (April 9th).</p>
+                    <p>If you would like to register to attend, please contact any of the organizers listed at the bottom of this page. The schedule for the conference is now available and can be found in the Schedule section below.</p>
                 </div>
             </div>
         </section>
@@ -571,13 +522,12 @@
                     <li><strong>Dates:</strong> Monday June 23 - Tuesday June 24, 2025</li>
                     <li><strong>Location:</strong> Middlebury College, Middlebury, Vermont</li>
                     <li><strong>Submission Deadline:</strong> April 2, 2025</li>
-                    <li><strong>Registration:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNus9Pr9jBN03pB0EUvRSifLFry2i0IrFqqpYnl0iNUgPsRA/viewform" target="_blank">Registration Form</a></li>
                 </ul>
 
-                <h3 style="margin-top: 30px;">Tentative Schedule</h3>
-                <p>The exact schedule will depend on the number of attendees, but the schedule will look something like:</p>
+                <h3 style="margin-top: 30px;">Conference Schedule</h3>
+                <p>Our full conference schedule with presentations is now available:</p>
                 
-                <div class="two-column" style="margin-top: 20px;">
+                <div style="margin-top: 20px;">
                     <div>
                         <h4 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fas fa-calendar-day"></i> Sunday, June 22</h4>
                         <ul class="timeline">
@@ -594,57 +544,56 @@
                                 Lunch
                             </li>
                             <li>
-                                <strong>1:00 - 2:30 PM</strong>
-                                Presentations
-                                Presentations
+                                <strong>1:00 - 2:30 PM: Session 1</strong>
+                                <p style="margin-top: 5px; font-style: italic;">Jeffrey Carpenter, "The labor market implications of grade inflation"</p>
+                                <p style="margin-top: 5px; font-style: italic;">Hannah Ruebeck, "The narrative of policy change: Effects on policy preferences, political efficacy, and collective action"</p>
+                                <p style="margin-top: 5px; font-style: italic;">Neeraja Gupta, "The Female Sensitivity Hypothesis: Evidence From Experimental Economics"</p>
                             </li>
                             <li>
                                 <strong>2:30 - 3:00 PM</strong>
                                 Coffee break
                             </li>
                             <li>
-                                <strong>3:00 - 5:30 PM</strong>
-                                Presentations
-                                Presentations
+                                <strong>3:00 - 4:30 PM: Session 2</strong>
+                                <p style="margin-top: 5px; font-style: italic;">Jakina Debnam Guzman, "Good Feelings and Risky Human Capital Accumulation"</p>
+                                <p style="margin-top: 5px; font-style: italic;">Erin Giffin, "Gendered Outcome Bias"</p>
+                                <p style="margin-top: 5px; font-style: italic;">Eren Bilen, "The Impact of Sentiment in AI Feedback on Trust, Performance and Risk-Taking"</p>
                             </li>
                             <li>
-                                <strong>5:30/6:00 PM</strong>
-                                Dinner and social time
+                                <strong>5:30 PM</strong>
+                                Dinner
                             </li>
                         </ul>
                     </div>
                     
                     <div>
-                        <h4 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fas fa-calendar-day"></i> Tuesday, June 24</h4>
+                        <h4 style="color: var(--primary-color); margin: 30px 0 15px;"><i class="fas fa-calendar-day"></i> Tuesday, June 24</h4>
                         <ul class="timeline">
                             <li>
                                 <strong>8:00 - 9:00 AM</strong>
                                 Breakfast
                             </li>
                             <li>
-                                <strong>9:00 - 10:30 AM</strong>
-                                Presentations
-                                Presentations
+                                <strong>9:00 - 10:30 AM: Session 3</strong>
+                                <p style="margin-top: 5px; font-style: italic;">Andrea Robbett/Peter Matthews, "Reality Bites: Partisan Beliefs as Enforced Norms"</p>
+                                <p style="margin-top: 5px; font-style: italic;">Samantha Stelnicki, "What Makes An Expert: An experiment on delegation of agency"</p>
+                                <p style="margin-top: 5px; font-style: italic;">Germán Reyes, "Experimental Evidence on the Learning Impact of Generative AI"</p>
                             </li>
                             <li>
                                 <strong>10:30 - 11:00 AM</strong>
                                 Coffee break
                             </li>
                             <li>
-                                <strong>11:00 AM - 12:00 PM</strong>
-                                Presentations
-                                Presentations
+                                <strong>11:00 AM - 12:00 PM: Session 4</strong>
+                                <p style="margin-top: 5px; font-style: italic;">Jonathan Lafky, "Ratings with Heterogeneous Preferences"</p>
+                                <p style="margin-top: 5px; font-style: italic;">Pun Winichakul, "The Effect of Experimenter Demand on Inference"</p>
                             </li>
                             <li>
                                 <strong>12:00 - 1:00 PM</strong>
                                 Lunch
                             </li>
                             <li>
-                                <strong>1:00 - 2:00/3:00 PM</strong>
-                                Additional sessions (if needed)
-                            </li>
-                            <li>
-                                <strong>3:00 PM</strong>
+                                <strong>1:00 PM</strong>
                                 Conference adjourns
                             </li>
                         </ul>
@@ -656,7 +605,7 @@
         <section id="travel">
             <h2>Travel & Accommodation</h2>
             
-            <img src="https://collegevine.imgix.net/2fcfcc58-aced-45a0-8eae-e24b1aacb25a.jpg?fit=crop&crop=edges&auto=format" alt="Middlebury College Campus" class="middlebury-photo">
+            <img src="/api/placeholder/1200/300" alt="Middlebury College Campus" class="middlebury-photo">
             
             <div class="two-column">
                 <div class="card">
@@ -667,7 +616,6 @@
                         <li>Boston Logan International Airport (BOS, about 3 hours away)</li>
                         <li>New York airports with Amtrak connection to Middlebury</li>
                     </ul>
-                    <p>Additional transportation information will be provided to registered participants as the event approaches.</p>
                 </div>
                 
                 <div class="card">
@@ -677,13 +625,13 @@
                         <li>
                             <strong>Middlebury Inn</strong>
                             <div class="accommodation-links">
-                                <a href="https://www.middleburyinn.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+                                <a href="#"><i class="fas fa-external-link-alt"></i> Visit Website</a>
                             </div>
                         </li>
                         <li>
                             <strong>Courtyard Marriott</strong>
                             <div class="accommodation-links">
-                                <a href="https://www.marriott.com/hotels/travel/btvcy-courtyard-middlebury/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+                                <a href="#"><i class="fas fa-external-link-alt"></i> Visit Website</a>
                             </div>
                         </li>
                     </ul>
@@ -700,33 +648,33 @@
             
             <div class="organizers-container">
                 <div class="organizers-row">
-                    <a href="mailto:jberazneva@middlebury.edu" class="organizer-card">
+                    <a href="#" class="organizer-card">
                         <strong>Julia Berazneva</strong>
                         <span>Middlebury College</span>
                     </a>
-                    <a href="mailto:tbyker@middlebury.edu" class="organizer-card">
+                    <a href="#" class="organizer-card">
                         <strong>Tanya Byker</strong>
                         <span>Middlebury College</span>
                     </a>
-                    <a href="mailto:jcarpent@middlebury.edu" class="organizer-card">
+                    <a href="#" class="organizer-card">
                         <strong>Jeffrey Carpenter</strong>
                         <span>Middlebury College</span>
                     </a>
-                    <a href="mailto:pmatthew@middlebury.edu" class="organizer-card">
+                    <a href="#" class="organizer-card">
                         <strong>Peter Matthews</strong>
                         <span>Middlebury College</span>
                     </a>
                 </div>
                 <div class="organizers-row">                   
-                 <a href="mailto:dmunro@middlebury.edu" class="organizer-card">
+                 <a href="#" class="organizer-card">
                     <strong>David Munro</strong>
                     <span>Middlebury College</span>
                     </a>
-                    <a href="mailto:greyes@middlebury.edu" class="organizer-card">
+                    <a href="#" class="organizer-card">
                         <strong>Germán Reyes</strong>
                         <span>Middlebury College</span>
                     </a>
-                    <a href="mailto:arobbett@middlebury.edu" class="organizer-card">
+                    <a href="#" class="organizer-card">
                         <strong>Andrea Robbett</strong>
                         <span>Middlebury College</span>
                     </a>
@@ -751,16 +699,8 @@
             mainNav.classList.toggle('show');
         });
         
-        // Back to top button
+        // Back to top button functionality
         const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
         
         backToTopButton.addEventListener('click', (e) => {
             e.preventDefault();
